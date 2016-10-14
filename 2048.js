@@ -18,6 +18,8 @@ var game={
     RUNNING:1,
     //表示游戏结束
     GAMEOVER:0,
+    //游戏暂停
+    PAUSE:2,
     //初始化数组
     start:function(){
         //游戏启动时调用
@@ -346,16 +348,19 @@ window.onload=function(){
 
     //键盘控制效果
     document.onkeydown=function(e){
-        var ev=e||event;
-        if(ev.keyCode==37){
-            game.moveLeft();
-        }else if(ev.keyCode==39){
-            game.moveRight();
-        }else if(ev.keyCode==38){
-            game.moveUp();
-        }else if(ev.keyCode==40){
-            game.moveDown();
+        if(this.state==this.RUNNING){
+            var ev=e||event;
+            if(ev.keyCode==37){
+                game.moveLeft();
+            }else if(ev.keyCode==39){
+                game.moveRight();
+            }else if(ev.keyCode==38){
+                game.moveUp();
+            }else if(ev.keyCode==40){
+                game.moveDown();
+            }
         }
+        
     };
 
     //移动端手势滑动效果
@@ -373,22 +378,27 @@ window.onload=function(){
         moveY=endY-startY;
     },false);
     document.addEventListener('touchend',function(e){
-        if(Math.abs(moveX)>100||Math.abs(moveY)>100){
-            if(moveX<0&&Math.abs(moveX)>moveY){
-                game.moveLeft();
-            }
-            else if(moveX>0&&Math.abs(moveX)>moveY){
-                game.moveRight();
-            }
-            else if(moveY<0&&Math.abs(moveY)>moveX){
-                game.moveUp();
-            }
-            else{
-                game.moveDown();
+        if(game.state==game.RUNNING){
+            if(Math.abs(moveX)>100||Math.abs(moveY)>100){
+                if(moveX<0&&Math.abs(moveX)>moveY){
+                    game.moveLeft();
+                }
+                else if(moveX>0&&Math.abs(moveX)>moveY){
+                    game.moveRight();
+                }
+                else if(moveY<0&&Math.abs(moveY)>moveX){
+                    game.moveUp();
+                }
+                else{
+                    game.moveDown();
+                }
+            }else{
+                return false;
             }
         }else{
             return false;
         }
+        
     });
 
     //游戏结束 点击 重新开始游戏
@@ -410,10 +420,11 @@ window.onload=function(){
     //中途暂停
     pause.addEventListener('click',function(){
         cont.style.display='block';
+        game.state=game.PAUSE;
     },false);
     //继续游戏
     goon.addEventListener('click',function(){
         cont.style.display='none';
+        game.state=game.RUNNING;
     },false);
 }
-
