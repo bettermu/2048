@@ -409,14 +409,17 @@ window.onload=function(){
     var pause=document.getElementById('pause');
     var cont=document.getElementById('cont');
     var goon=document.getElementById('continue');
+    var totle=document.getElementById('totle');
     btn.addEventListener('click',function(){
         game.start();
+        totle.innerHTML=0;
         over.style.display='none';
     },false);
 
     //重新开始按钮
     again.addEventListener('click',function(){
         game.start();
+        totle.innerHTML=0;
     },false);
     //中途暂停
     pause.addEventListener('click',function(){
