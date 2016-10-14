@@ -381,16 +381,16 @@ window.onload=function(){
     gridPanel.addEventListener('touchend',function(e){
         if(game.state==game.RUNNING){
             if(Math.abs(moveX)>100||Math.abs(moveY)>100){
-                if(moveX<0&&Math.abs(moveX)>moveY){
+                if(moveX<0&&Math.abs(moveX)>Math.abs(moveY)){
                     game.moveLeft();
                 }
-                else if(moveX>0&&Math.abs(moveX)>moveY){
+                else if(moveX>0&&Math.abs(moveX)>Math.abs(moveY)){
                     game.moveRight();
                 }
-                else if(moveY<0&&Math.abs(moveY)>moveX){
+                else if(moveY<0&&Math.abs(moveY)>Math.abs(moveX)){
                     game.moveUp();
                 }
-                else if((moveY>0&&Math.abs(moveY)>moveX)){
+                else if(moveY>0&&Math.abs(moveY)>Math.abs(moveX)){
                     game.moveDown();
                 }
             }else{
