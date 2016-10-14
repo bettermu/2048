@@ -1,0 +1,175 @@
+
+body {
+    font-family:'Kristen ITC';
+}
+#gridPanel {
+    width:900px;
+    height:900px;
+    margin:200px auto;
+    background-color:#bbada0;
+    border-radius:20px;
+    position:relative;
+}
+.grid,.cell {
+    height:200px;
+    width: 200px;
+    border-radius:12px;
+}
+.grid {
+    background-color:#ccc0b3;
+    float:left;
+    margin:20px 0 0 20px;
+}
+.cell {
+    text-align:center;
+    line-height:200px;
+    font-size:120px;
+    font-family:'Kristen ITC';
+    color:#fff;
+    position:absolute;
+}
+
+/*每一行的定位*/
+#c00,#c01,#c02,#c03 {
+    top:20px;
+}
+#c10,#c11,#c12,#c13 {
+    top:240px;
+}
+#c20,#c21,#c22,#c23 {
+    top:460px;
+}
+#c30,#c31,#c32,#c33 {
+    top:680px;
+}
+/*每一列的定位*/
+#c00,#c10,#c20,#c30 {
+    left:20px;
+}
+#c01,#c11,#c21,#c31 {
+    left:240px;
+}
+#c02,#c12,#c22,#c32 {
+    left:460px;
+}
+#c03,#c13,#c23,#c33 {
+    left:680px;
+}
+.n2     {background-color:#eee3da}
+.n4     {background-color:#ede0c8}
+.n8     {background-color:#f2b179}
+.n16    {background-color:#f59563}
+.n32    {background-color:#f67c5f}
+.n64    {background-color:#f65e3b}
+.n128   {background-color:#edcf72}
+.n256   {background-color:#edcc61}
+.n512   {background-color:#99cc00}
+.n1024  {background-color:#33b5e5}
+.n2048  {background-color:#0099cc}
+.n4096  {background-color:#aa66cc}
+.n8192  {background-color:#9933cc}
+.n16384 {background-color:#cc0017}
+.n32768 {background-color:#ffea08}
+.n65536 {background-color:#000000}
+
+.n2,.n4 {
+    color:#776e65
+}
+
+.n1024,
+.n2048,
+.n4096,
+.n8192 {
+    font-size:90px;
+}
+.n16384,
+.n32768,
+.n65536 {
+    font-size:80px;
+}
+
+#score {
+    font-size:75px;
+    font-weight:bold;
+    position:absolute;
+    top:100px;
+    left:20px;
+}
+
+#score span {
+    margin-left:20px;
+    color:#e92322;
+}
+#over,#cont {
+    height:100%;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    font-size:60px;
+    font-weight: bold;
+    text-align:center;
+    display:none;
+
+}
+#finalScore {
+    color:#e92322;
+    margin-left:10px;
+}
+#over div,#cont div {
+    height:100%;
+    width:100%;
+    background-color:#666;
+    opacity:0.4;
+}
+#over p,#cont p{
+    border-radius:50px;
+    padding:50px;
+    border:10px solid #666;
+    line-height:1.6em;
+    width:600px;
+    background-color:#fff;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-350px;
+    margin-top:-200px;
+}
+#restart,#continue{
+    font-family:'kaiti';
+    background-color:#6495c6;
+    border-radius:20px;
+    line-height:80px;
+    padding:20px;
+    text-align:center;
+    font-size:60px;
+}
+
+#set{
+    width:600px;
+    position:absolute;
+    top:1150px;
+    left:0;
+    overflow:hidden;
+    padding:0 50px 0 50px;
+    margin-left:140px;
+}
+#set button {
+    border:5px solid #666;
+    height:120px;
+    background-color: #ccc;
+    color:#333;
+    border-radius:10px;
+    font-size:60px;
+    font-family:'kaiti';
+}
+#again {
+    float:left;
+
+}
+#pause {
+    float:right;
+}
+
+
+
