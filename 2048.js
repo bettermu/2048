@@ -360,24 +360,25 @@ window.onload=function(){
                 game.moveDown();
             }
         }
-        
+
     };
 
     //移动端手势滑动效果
     var startX,startY,endX,endY,moveX,moveY;
+    var gridPanel=document.getElementById('gridPanel');
 
-    document.addEventListener('touchstart',function(e){
+    gridPanel.addEventListener('touchstart',function(e){
         startX= e.touches[0].clientX;
         startY= e.touches[0].clientY;
     },false);
 
-    document.addEventListener('touchmove',function(e){
+    gridPanel.addEventListener('touchmove',function(e){
         endX= e.touches[0].clientX;
         endY= e.touches[0].clientY;
         moveX=endX-startX;
         moveY=endY-startY;
     },false);
-    document.addEventListener('touchend',function(e){
+    gridPanel.addEventListener('touchend',function(e){
         if(game.state==game.RUNNING){
             if(Math.abs(moveX)>100||Math.abs(moveY)>100){
                 if(moveX<0&&Math.abs(moveX)>moveY){
@@ -398,7 +399,7 @@ window.onload=function(){
         }else{
             return false;
         }
-        
+
     });
 
     //游戏结束 点击 重新开始游戏
