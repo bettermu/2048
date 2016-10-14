@@ -390,7 +390,7 @@ window.onload=function(){
                 else if(moveY<0&&Math.abs(moveY)>moveX){
                     game.moveUp();
                 }
-                else{
+                else if((moveY>0&&Math.abs(moveY)>moveX)){
                     game.moveDown();
                 }
             }else{
